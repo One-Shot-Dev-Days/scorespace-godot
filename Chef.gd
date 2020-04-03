@@ -7,8 +7,13 @@ extends KinematicBody2D
 export var speed = 100
 export var gravity = 98
 
+var vert_speed = 0
+
+func bounce(bounce_speed):
+	print("BOUNCE!")
+	vert_speed = -bounce_speed
+
 func die():
-	print("oops I'm dead")
 	queue_free()
 
 func _physics_process(delta):
@@ -17,7 +22,10 @@ func _physics_process(delta):
 		move.x = -speed * delta
 	elif Input.is_action_pressed("move_right"):
 		move.x = speed * delta
-	move.y = gravity * delta
+
+	vert_speed += gravity * delta
+	move.y = vert_speed
+	
 	var collision = move_and_collide(move)
 	if collision:
 		if collision.collider.has_method('kill'):
