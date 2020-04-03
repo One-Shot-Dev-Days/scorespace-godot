@@ -1,0 +1,9 @@
+- movement left/right
+- enemies
+- enemy movement
+- bounce off enemy
+- breakable blocks
+- death spikes
+- game over
+- score handling
+- ground pound
