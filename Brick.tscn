@@ -3,7 +3,7 @@
 [ext_resource path="res://Brick.gd" type="Script" id=1]
 [ext_resource path="res://assets/environment/brick.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 
 [node name="Brick" type="KinematicBody2D"]
 position = Vector2( -2.0088, 45.362 )
@@ -15,4 +15,4 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 1.6, 1.6 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )

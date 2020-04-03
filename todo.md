@@ -1,5 +1,3 @@
-- game over on spikes
-
 - breakable blocks
 
 - enemies

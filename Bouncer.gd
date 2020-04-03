@@ -4,3 +4,7 @@ export var bounce_speed = 100
 
 func bounce(target):
 	target.bounce(bounce_speed)
+	_damage()
+
+func _damage():
+	return
