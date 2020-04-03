@@ -5,6 +5,7 @@ extends "res://Pacer.gd"
 # var b = "text"
 
 func _damage():
+	Globals.score += 5
 	queue_free()
 
 

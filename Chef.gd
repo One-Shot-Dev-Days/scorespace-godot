@@ -14,9 +14,13 @@ func bounce(bounce_speed):
 	vert_speed = -bounce_speed
 
 func die():
-	queue_free()
+	Globals.game_over = true
+	rotation_degrees = -90
 
 func _physics_process(delta):
+	if Globals.game_over:
+		return
+		
 	var move = Vector2(0, 0)
 	if Input.is_action_pressed("move_left"):
 		move.x = -speed * delta
@@ -30,16 +34,16 @@ func _physics_process(delta):
 	
 	var collision = move_and_collide(move)
 	if collision:
+		vert_speed = 0
 		if collision.collider.has_method('kill'):
 			collision.collider.kill(self)
 		elif collision.collider.has_method('bounce'):
 			collision.collider.bounce(self)
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if Globals.game_over and Input.is_action_pressed("restart"):
+		Globals.game_over = false
+		Globals.score = 0
+		get_tree().reload_current_scene()
+
