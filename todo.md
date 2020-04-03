@@ -1,8 +1,4 @@
-- breakable blocks
-
-- enemies
-- enemy movement
-- bounce off enemy
+- bounce off walls
 
 - score handling
 - ground pound

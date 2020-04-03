@@ -26,6 +26,8 @@ func _physics_process(delta):
 	vert_speed += gravity * delta
 	move.y = vert_speed
 	
+	print("chef move", move)
+	
 	var collision = move_and_collide(move)
 	if collision:
 		if collision.collider.has_method('kill'):

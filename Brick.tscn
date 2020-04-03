@@ -7,8 +7,10 @@
 
 [node name="Brick" type="KinematicBody2D"]
 position = Vector2( -2.0088, 45.362 )
+collision_layer = 4
+collision_mask = 7
 script = ExtResource( 1 )
-bounce_speed = 12
+bounce_speed = 8
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
